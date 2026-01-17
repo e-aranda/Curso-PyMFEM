@@ -2,4 +2,5 @@
 Es necesario tener instalado Docker previamente. Desde una terminal ejecutar:
 
 `$ ./docker-pymfem.sh download`
+`$ ./docker-pymfem.sh run`
 
