@@ -6,3 +6,8 @@ $ ./docker-pymfem.sh download
 $ ./docker-pymfem.sh run
 ```
 
+O si se quiere construir la imagen:
+```
+$ ./docker-pymfem.sh build
+```
+
