@@ -1,0 +1,9 @@
+// mesh
+
+border bb(t=0, 2*pi){x=cos(t); y=sin(t); label = 1;};
+
+
+mesh th = buildmesh(bb(60));
+plot(th);
+savemesh(th,"circulo.msh");
+
