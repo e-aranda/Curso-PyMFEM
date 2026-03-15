@@ -197,7 +197,7 @@ u_true.SetSubVector(ess_tdof_list, aux)
 M = mfem.ParBilinearForm(fespace)
 M.AddDomainIntegrator(mfem.MassIntegrator())
 M.Assemble()
-M.Finalize(0)
+M.Finalize()
 
 
 # Matriz de rigidez
@@ -210,7 +210,7 @@ ue = mfem.RestrictedCoefficient(ue_coeff,ess_robin)
 K = mfem.ParBilinearForm(fespace)
 K.AddDomainIntegrator(mfem.DiffusionIntegrator(kappa))
 K.AddBoundaryIntegrator(mfem.MassIntegrator(alpha))
-K.Assemble(0)
+K.Assemble()
 K.Finalize()
 
 # Segundo miembro

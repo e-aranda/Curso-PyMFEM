@@ -9,7 +9,7 @@ from mfem.common.arg_parser import ArgParser
 # Paso de argumentos en la llamada
 parser = ArgParser()
 parser.add_argument('-r', '--refine',
-                    action='store', default=1, type=int,
+                    action='store', default=3, type=int,
                     help="Número de refinamientos de la malla")
 parser.add_argument('-v', '--visualization',
                     action='store_true',
@@ -91,7 +91,7 @@ class FE_Evolution(mfem.PyTimeDependentOperator):
         self.T_solver.Mult(self.z, y)       
     
 # malla serie
-meshfile = 'mallas/circulo.mesh'
+meshfile = 'mallas/periodic-hexagon.mesh'
 
 mesh = mfem.Mesh(meshfile)
 dim = mesh.Dimension()
@@ -106,20 +106,13 @@ center = (bb_min + bb_max)/2.0
         
 class velocity_coeff(mfem.VectorPyCoefficient):
     def EvalValue(self, x):
-        X = 2 * (x - center) / (bb_max - bb_min)
-        v = [np.pi/2*X[1],  - np.pi/2*X[0]]
+        v = [np.sqrt(2./3.), np.sqrt(1./3)]        
         return v
 
 class u0_coeff(mfem.PyCoefficient):
     def EvalValue(self, x):
         X = 2 * (x - center) / (bb_max - bb_min)
-        rx = 0.45
-        ry = 0.25
-        cx = 0.
-        cy = -0.2
-        w = 10.
-        return (erfc(w * (X[0]-rx)) * erfc(-w*(X[0]+rx)) *
-                erfc(w * (X[1]-cy-ry)) * erfc(-w*(X[1]-cy+ry)))/16.
+        return np.exp(-40. * (X[0]**2 + X[1]**2))
 
 velocity = velocity_coeff(dim)
 u0 = u0_coeff()
