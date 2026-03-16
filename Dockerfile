@@ -46,8 +46,8 @@ RUN mkdir -p /opt/archives
 WORKDIR /opt/archives
 
 # OpenVSCode server
-RUN curl -L https://github.com/gitpod-io/openvscode-server/releases/download/openvscode-server-v1.69.1/openvscode-server-v1.69.1-linux-x64.tar.gz >  /opt/archives/openvscode-server-v1.69.1-linux-x64.tar.gz && \
-  tar xzf openvscode-server-v1.69.1-linux-x64.tar.gz && chown -R euler:euler openvscode-server-v1.69.1-linux-x64
+RUN curl -L https://github.com/gitpod-io/openvscode-server/releases/download/openvscode-server-v1.69.1/openvscode-server-v1.69.1-linux-arm64.tar.gz >  /opt/archives/openvscode-server-v1.69.1-linux-arm64.tar.gz && \
+  tar xzf openvscode-server-v1.69.1-linux-arm64.tar.gz && chown -R euler:euler openvscode-server-v1.69.1-linux-arm64
 
 USER euler
 WORKDIR /home/euler

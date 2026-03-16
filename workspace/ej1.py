@@ -8,7 +8,6 @@ mesh = mfem.Mesh.MakeCartesian2D(20,20,mfem.Geometry.SQUARE)
 fec = mfem.H1_FECollection(1,  mesh.Dimension())
 fespace = mfem.FiniteElementSpace(mesh, fec)
 print('Número de incógnitas:',fespace.GetTrueVSize())
-
 # forma bilineal
 a = mfem.BilinearForm(fespace)
 a.AddDomainIntegrator(mfem.DiffusionIntegrator())
