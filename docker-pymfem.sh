@@ -13,7 +13,7 @@ NC='\033[0m' # No Color
 # Variables de configuración
 IMAGE_NAME="earanda/pymfem:tutorial
 "
-CONTAINER_NAME="pym"
+CONTAINER_NAME="pymfem"
 USER_NAME="euler"
 USER_ID=1000
 GROUP_ID=1000
