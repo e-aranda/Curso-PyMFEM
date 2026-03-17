@@ -13,7 +13,7 @@ del serial_mesh
 
 fec = mfem.H1_FECollection(1,  mesh.Dimension())
 fespace = mfem.ParFiniteElementSpace(mesh, fec)
-print('Número de incógnitas:',fespace.GetTrueVSize())
+print('Número de incógnitas: de ',myid, fespace.GetTrueVSize())
 
 # forma bilineal
 a = mfem.ParBilinearForm(fespace)

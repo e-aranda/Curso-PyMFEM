@@ -31,3 +31,16 @@ ejemplos/notebooks/mallas
 ejemplos/paralelo/mallas
 
 ejemplos/dev/
+
+# Auxiliary TeX files
+presentacion/*.aux
+presentacion/*.log
+presentacion/*.out
+presentacion/*.nav
+presentacion/*.toc
+presentacion/*.vrb
+presentacion/*.snm
+presentacion/*.png
+presentacion/*.tex
+presentacion/auto/
+presentacion/*.gz

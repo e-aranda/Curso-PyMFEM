@@ -14,7 +14,7 @@ a.AddDomainIntegrator(mfem.DiffusionIntegrator())
 a.Assemble()
 
 # Segundo miembro (f=1)
-one = mfem.ConstantCoefficient(1.0)
+one = mfem.ConstantCoefficient(-1.0)
 
 b = mfem.LinearForm(fespace)
 b.AddDomainIntegrator(mfem.DomainLFIntegrator(one))
